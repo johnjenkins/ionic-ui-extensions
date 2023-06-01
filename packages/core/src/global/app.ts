@@ -1,3 +1,4 @@
+import '@ionic/core';
 import { initialize as initializeIonic } from '@ionic/core/components';
 import { setMode } from '@stencil/core';
 

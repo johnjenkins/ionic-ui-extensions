@@ -1,7 +1,4 @@
 import { Component, ComponentInterface, Event, EventEmitter, h, Host, Prop, Watch } from '@stencil/core';
-
-import { defineCustomElement as defineIonButtonCustomElement } from '@ionic/core/components/ion-button.js';
-import { d as defineIonIconCustomElement } from '@ionic/core/components/icon.js';
 import { PaginationBarChangeEventDetail } from './pagination-bar-interface';
 
 const LEFT_PAGE = 'LEFT';
@@ -50,11 +47,6 @@ export class PaginationBar implements ComponentInterface {
   @Watch('size')
   sizeChanged() {
     this.calculatePageSteps();
-  }
-
-  connectedCallback() {
-    defineIonButtonCustomElement();
-    defineIonIconCustomElement();
   }
 
   componentWillLoad() {

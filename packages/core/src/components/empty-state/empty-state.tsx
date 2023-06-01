@@ -1,9 +1,6 @@
 import { Host, Prop, Component, h } from '@stencil/core';
 import { getIonMode } from '../../global/ionic-global';
 
-import { defineCustomElement as defineIonTextCustomElement } from '@ionic/core/components/ion-text.js';
-import { d as defineIonIconCustomElement } from '@ionic/core/components/icon.js';
-
 /**
  * @virtualProp {"ios" | "md"} mode - The mode determines which platform styles to use.
  */
@@ -21,11 +18,6 @@ export class EmptyState {
   @Prop() heading: string;
 
   @Prop() description: string;
-
-  connectedCallback() {
-    defineIonTextCustomElement();
-    defineIonIconCustomElement();
-  }
 
   render() {
     return (

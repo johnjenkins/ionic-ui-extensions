@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { PaginationBarChangeEventDetail } from "./components/pagination-bar/pagination-bar-interface";
+export { PaginationBarChangeEventDetail } from "./components/pagination-bar/pagination-bar-interface";
 export namespace Components {
     interface IonXEmptyState {
         "description": string;
@@ -50,6 +51,10 @@ export namespace Components {
          */
         "disabled": boolean;
     }
+}
+export interface IonXPaginationBarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLIonXPaginationBarElement;
 }
 declare global {
     interface HTMLIonXEmptyStateElement extends Components.IonXEmptyState, HTMLStencilElement {
@@ -110,7 +115,7 @@ declare namespace LocalJSX {
         /**
           * Emitted when the selected page value changes.
          */
-        "onIonChange"?: (event: CustomEvent<PaginationBarChangeEventDetail>) => void;
+        "onIonChange"?: (event: IonXPaginationBarCustomEvent<PaginationBarChangeEventDetail>) => void;
         /**
           * The active page index (zero-based) of the paginated data set.
          */
